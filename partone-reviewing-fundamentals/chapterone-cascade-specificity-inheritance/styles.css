@@ -1,5 +1,6 @@
 h1 {
     color: #2f4f4f;
+    font-weight: bold;
 }
 
 .nav {
@@ -15,14 +16,15 @@ h1 {
 .nav a {
     color: white;
     background-color: #13a4a4;
-    padding: 5px;
+    padding: 5px 15px;
     border-radius: 2px;
     text-decoration: none;
 }
 /** This comes last in the source, so will be applied **/
 /** Though there is a tie in specificity **/
-a.featured {
+.nav .featured {
     background-color: orange;
+    box-shadow: 3px 2px #6f9090;
 }
 /** Link styles go in a certain order because the source order affects the cascade. **/
 /** positioned at the top. apply only when not active, visitied and hovered **/
@@ -54,4 +56,8 @@ a:active {
 .footer a {
     color: initial;
     text-decoration: underline;
+}
+
+.title {
+    font: 32px Helvetica, Arial, sans-serif;
 }
