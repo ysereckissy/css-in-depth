@@ -1,38 +1,76 @@
+:root {
+    /*font-size: calc(0.5em + 1vw);*/
+    /** line height shouldn't have unit **/
+    line-height: 1.2;
+    /** specifying unit may bring problems, such as text overlapping **/
+    /** line-height: 1.2em;**/
+}
+/**
 body {
     font-size: 16px;
 }
+**/
+/** This brings in the issue of the underlying ul shrinking in size **/
 ul {
     font-size: .8em;
 }
+/** Below is a quick fix **/
+/*
 ul ul {
     font-size: 1em;
+}
+*/
+/** Using rem is a better fix. Defining the size based on the root element size **/
+ul {
+    font-size: .8rem;
 }
 .padded {
     font-size: 16px;
     padding: 1em;
 }
-
 .box {
     padding: 1em;
     border-radius: 1em;
     background-color: lightgray;
 }
-
 .box-small {
     font-size: 12px;
 }
-
 .box-large {
     font-size: 18px;
 }
-
 div.box {
     background-color: white;
     margin: 12px;
 }
-
 .slogan {
     font-size: 1.2em;
     padding: 1.2em;
     background-color: #cccccc;
+}
+.panel {
+    font-size: 1rem;
+    padding: 1em;
+    border-radius: .5em;
+    border: 1px solid #999999;
+}
+.panel > h2 {
+    margin-top: 0;
+    font-size: .8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.panel.large {
+    font-size: 1.2rem;
+    text-align: justify;
+    padding: 1.2em;
+}
+.square {
+    width: 90vmin;
+    height: 90vmin;
+    background-color: #336699;
+}
+
+.about-us {
+    font-size: 2em;
 }
