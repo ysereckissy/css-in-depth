@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+    <link href="bfc.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <section>
+        <div class="float">I am a floated box!</div>
+        <p>I am content inside the container.</p>
+    </section>
+    <section>
+        <div class="box" style="overflow: auto;">
+            <div class="float">I am a floated box!</div>
+            <p>I am content inside the <code>overflow:auto</code> content.</p>
+        </div>
+    </section>
+    <section>
+        <div class="box" style="display: flow-root;">
+            <div class="float">I am a float box!</div>
+            <p>I am content inside the <code>display:flow-root</code></p>
+        </div>
+    </section>
+</body>
