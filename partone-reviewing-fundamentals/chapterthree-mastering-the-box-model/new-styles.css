@@ -1,0 +1,96 @@
+/**
+ * Here is the way to prevent margin from collapsing: 
+ * 1- Applying overflow: auto (or any value other than visible) to the container prevents 
+ * margins inside the container from collapsing with those outside the container. This is 
+ * often the least intrusive solution
+ * 2- Adding a border or padding between two margins stops them from collapsing.
+ * 3- Margins won't collapse to the outside of a container that is floated, that is an inline block 
+ * or that has an absolute of fixed position.
+ * 4- When using a flexbox, margins won't collapse between elements that are part of the flexbox. This is 
+ * also the base with grid layout
+ * 5- Elements with a table-cell display don't have a margin, so they won't collapse. This also applies
+ * to table-row and most other table display types. Exceptions are table, table-inline, and table-caption.
+ **/
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/** lobotomized owl selector * + * **/
+* + * {
+    margin-top: 1.5em;
+}
+
+header {
+    /* prevent the h1 margin to collapse outside */
+    /* of its container the header */
+    padding: 1em 1.5em;
+    color: #fff;
+    background-color: #0072b0;
+    border-radius: .5em;
+    /** The following to center vertically the content**/
+}
+/** Useless as the HTML code is commened out: see the html file **/
+/**
+.wrapper {
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+}
+**/
+
+/** Lines commented out are useful for table display only **/
+.container {
+    display: flex;
+    /** width: 100%; **/
+    /** border-spacing: 1.5em 0; **/
+}
+
+main {
+    display: block;
+}
+
+.main {
+    /** display: table-cell; **/
+    width: 70%;
+    padding: 1em 1.5em;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.sidebar {
+    /** display: table-cell;**/
+    width: 30%;
+    padding: 1.5em;
+    /** Remove the extra margin by lobotomized owl*/
+    margin-top: 0;
+    margin-left: 1.5em;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.button-link {
+    display: block;
+    padding: .5em;
+    color: #fff;
+    background-color: #0090C9;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.sponsor-link {
+    display: block;
+    color: #0072b0;
+    font-weight: bold;
+    text-decoration: none;
+}

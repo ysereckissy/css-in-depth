@@ -1,15 +1,23 @@
 :root {
-    /*font-size: calc(0.5em + 1vw);*/
+    /*font-size: 1em;*/
+    font-size: calc(0.5em + 1vw);
     /** line height shouldn't have unit **/
     line-height: 1.2;
     /** specifying unit may bring problems, such as text overlapping **/
     /** line-height: 1.2em;**/
 }
-/**
-body {
-    font-size: 16px;
+
+@media (min-width: 800px) {
+    body {
+        width: 80%;
+    }
 }
-**/
+body {
+    /*font-size: 16px;*/
+    width: 90%;
+    margin: 0 auto;
+}
+
 /** This brings in the issue of the underlying ul shrinking in size **/
 ul {
     font-size: .8em;
@@ -49,19 +57,19 @@ div.box {
     background-color: #cccccc;
 }
 .panel {
-    font-size: 1rem;
+    /*font-size: 1.2rem;*/
     padding: 1em;
     border-radius: .5em;
     border: 1px solid #999999;
 }
 .panel > h2 {
     margin-top: 0;
-    font-size: .8rem;
+    font-size: .8em;
     font-weight: bold;
     text-transform: uppercase;
 }
 .panel.large {
-    font-size: 1.2rem;
+    font-size: 1.5em;
     text-align: justify;
     padding: 1.2em;
 }
