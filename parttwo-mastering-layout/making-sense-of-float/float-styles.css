@@ -1,0 +1,94 @@
+/**
+ * Read about double container pattern and media object pattern
+ **/
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Lobotomized owl */
+body * + * {
+    margin-top: 1.5em;
+}
+
+header {
+    padding: 1em 1.5em;
+    color: #fff;
+    background-color: #0072b0;
+    margin-bottom: 1.5em;
+}
+
+.main {
+    padding: 0 1.5em;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.media {
+    float: left;
+    margin: 0 1.5em 1.5em 0;
+    width: calc(50% - 1.5em);
+    padding: 1.5em;
+    background-color: #eee;
+    border-radius: .5em;
+}
+
+.media:nth-child(odd) {
+    clear: left;
+}
+
+
+/**
+ * The solution to the .media-body content flowing clear the end of the block and below the image is to use a Bloc Formatting Context (BFC):
+ 1- It contains the top and bottom margins of all elements within it. They won't collapse with the margins of elements ouside of the BFC
+ 2- It contains all floated elements within it.
+ 3- It doesn't overlap with floated elements outside the BFC.
+
+ Put simply, the content inside a BFC will not overlap or interact with elements on the outside as you would normally expect. If you apply clear to an element in a BFC, it'll clear only floats elements within it.
+
+ Applying any of the following property values to an element triggers a BFC.
+ - float: left or float: right -- anything but none
+ - overflow: hidden, auto or scroll -- anything but visible
+ - display: inline-block, table-cell, table-caption, flex, inline-flex, grid, inline-grid -- these are called block containers.
+ - position: absolute or position: fixed
+
+ NOTE: the page's root element also creates a Block Formatting Context for the page.
+ **/
+.media-image {
+    float: left;
+    margin-right: 1.5em;
+}
+
+.media-body {
+    margin-top: 0;
+    overflow: auto;
+}
+
+.media-body h4 {
+    margin-top: 0;
+}
+/* preventing margins of the floated elements to collapse outside */
+.clearfix::before,
+.clearfix::after {
+    display: table;
+    content: " ";
+}
+/* only ::after needs a clearfix */
+.clearfix::after {
+    clear: both;
+}
