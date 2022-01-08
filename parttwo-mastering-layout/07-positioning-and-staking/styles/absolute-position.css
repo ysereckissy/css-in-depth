@@ -1,0 +1,38 @@
+/**
+ * Absolute positioning positions a element relative to it's closest position ancestor.
+ * 
+ * Application: 
+ * Position the Close button to the top right corner of the modal dialog.
+ * Its parent element is modal-body, which has fixed positioning, so it becomes the containing block
+ *
+ * Typically, as in this example, the containing block will be the element's parent.
+ * Int the cases where the parent element is not positioned, then the browser will look up the DOM
+ * hierarchy at the grandparent, great-grandparent, and so on until a positioned
+ * element is found, which is then used as the containing block.
+ **/
+
+ /** some css properties are defined in fixed-position.css **/
+ .modal-close {
+     position: absolute;
+     top: 0.3em;
+     right: 0.3em;
+     padding: 0.3em;
+     font-size: 2em;
+     height: 1em;
+     width: 1em;
+     /*force the text to overflow the element */
+     text-indent: 10em;
+     overflow: hidden;
+     border: 0;
+     background-color: #600000;
+ }
+
+ .modal-close::after {
+     position: absolute;
+     line-height: 0.5;
+     top: 0.2em;
+     left: 0.1em;
+     text-indent: 0;
+     content: "\00d7";
+     color: #fff;
+ }
