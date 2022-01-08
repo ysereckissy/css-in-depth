@@ -157,3 +157,22 @@ body {
 .menu > li > a:hover {
     background-color: #fff;
 }
+
+/** Utility classes examples **/
+.text-center {
+    text-align: center !important;
+}
+.float-left {
+    float: left;
+}
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+.hidden {
+    display: none !important;
+}
