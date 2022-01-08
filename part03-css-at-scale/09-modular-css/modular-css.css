@@ -85,4 +85,15 @@ body {
 
 .media__body > h4 {
     margin-top: 0;
+    text-transform: uppercase;
+}
+
+.media--right > .media__image {
+    float: right;
+    margin-right: 0;
+    margin-left: 1.5em;
+}
+
+.media--right > .media__body {
+    text-align: right;
 }
