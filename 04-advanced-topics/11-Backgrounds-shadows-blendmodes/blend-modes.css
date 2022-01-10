@@ -1,9 +1,58 @@
+:root {
+    box-sizing: border-box;
+    height: 300vh;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body * + * {
+    margin-top: 1.5em;
+}
 .blend {
     min-height: 40em;
-    background-image: url("./images/bear.jpg");
-    background-color: #148;
     background-size: cover;
     background-repeat: no-repeat;
+}
+.blend-1 {
+    background-image: url("./images/bear.jpg"), url("./images/bear.jpg");
     background-position: -30vw, 30vw;
+    background-blend-mode: multiply;
+}
+.blend-2 {
+    background-image: url("./images/bear.jpg");
+    background-color: #148;
+    background-position: center;
     background-blend-mode: luminosity;
+}
+.blend-3 {
+    background-image: url("./images/scratches.png"), url("./images/bear.jpg");
+    background-size: 20em, cover;
+    background-repeat: repeat, no-repeat;
+    background-position: center center;
+    background-blend-mode: soft-light;
+}
+
+.blend-4 {
+    background-image: url("./images/bear.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 5em 0 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.blend-4 h1 {
+    margin: 0;
+    font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-size: 6rem;
+    text-align: center;
+    mix-blend-mode: hard-light;
+    background-color: #c33;
+    color: #808080;
+    border: .1em solid #ccc;
+    border-width: .1em 0;
 }
